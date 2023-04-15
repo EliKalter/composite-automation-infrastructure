@@ -1,5 +1,5 @@
 import { WebElementPromise } from "selenium-webdriver";
-import { TI_WEPGeneratorFunction } from "../../../types";
+import { TI_WEPGeneratorFunction } from "../../types";
 import { TC_ControllerParams } from "./types";
 
 export default class C_WEController {

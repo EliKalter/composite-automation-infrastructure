@@ -11,8 +11,3 @@ export type TC_UnionToIntersection<U> = (
 ) extends (k: infer I) => void
     ? I
     : never;
-
-export type TC_AtLeastOne<T> = {
-    [K in keyof T]-?: Required<Pick<T, K>> &
-        Partial<Pick<T, Exclude<keyof T, K>>>;
-}[keyof T];

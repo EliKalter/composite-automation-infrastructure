@@ -15,16 +15,13 @@ import C_SimpleCollection, {
 
 export type T_ComplexesForms =
     | TF_ComplexControllerAllMembers
-    | TF_ComplexCollection
-    | TF_SimpleCollection;
+    | TF_ComplexCollection;
 
 export type TC_FormToComplex<T extends T_ComplexesForms> =
     T extends TF_ComplexControllerAllMembers
         ? C_ComplexController<T>
         : T extends TF_ComplexCollection
         ? C_ComplexCollection<T>
-        : T extends TF_SimpleCollection
-        ? C_SimpleCollection<T>
         : never;
 
 export type TD_ComplexParameters<T extends T_ComplexesForms> =
@@ -32,14 +29,11 @@ export type TD_ComplexParameters<T extends T_ComplexesForms> =
         ? TC_ParameterizedComplexController<T>
         : T extends TF_ComplexCollection
         ? TC_ParameterizedComplexCollection<T>
-        : T extends TF_SimpleCollection
-        ? TC_ParameterizedSimpleCollection<T>
         : never;
 
 export type TD_ComplexesNames = {
     complexCollections: TF_ComplexCollection;
     complexControllers: TF_ComplexControllerAllMembers;
-    simpleCollections: TF_SimpleCollection;
 };
 
 export type TC_AggregatedComplex<
