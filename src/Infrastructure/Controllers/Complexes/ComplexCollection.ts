@@ -1,4 +1,4 @@
-import { TC_AtLeastOne } from "../../../types";
+import { TC_AtLeastOne } from "../../types";
 import C_ComplexController, {
     TF_ComplexControllerAllMembers,
 } from "./ComplexController";

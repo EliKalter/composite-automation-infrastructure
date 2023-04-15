@@ -1,5 +1,4 @@
-import { WebElementPromise } from "selenium-webdriver";
-import { TC_AtLeastOne } from "../../../types";
+import { TC_AtLeastOne } from "../../types";
 import C_Button from "../Simples/Button";
 import C_Field from "../Simples/Field";
 import {
