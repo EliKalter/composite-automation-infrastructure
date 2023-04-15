@@ -1,0 +1,25 @@
+{
+    "name": "automationfoundation",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "format": "npx prettier --write ."
+    },
+    "author": "Eli Kalter",
+    "license": "ISC",
+    "keywords": [],
+    "description": "",
+    "dependencies": {
+        "@types/selenium-webdriver": "^4.1.13",
+        "@types/typescript": "^2.0.0",
+        "prettier": "^2.8.7",
+        "selenium-webdriver": "^4.8.2",
+        "ts-node": "^10.9.1"
+    },
+    "prettier": {
+        "tabWidth": 4,
+        "semi": true,
+        "trailingComma": "all"
+    }
+}

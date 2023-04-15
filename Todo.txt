@@ -1,0 +1,11 @@
+Todo add documentation
+Todo make example interfaces that show the capability of the project
+Todo test the capability of the project
+Todo add more controllers and polish existing ones and fill the unfinished ones
+Todo make more collections in different levels of complexity (List, Form, ContextMenuForm etc)
+Todo clean the different types of type (i.e. te, tc, td, ti, tf)
+Todo add coverage for different selectors (i.e. (x: webdriver) => WebElementPromise[], (x: WebElementPromise) => WebElementPromise, (x: WebElementPromise) => WebElementPromise[])
+Todo add a type property to all controllers and collections parameters so that there could be two of them that take the same parameters and have different functionality
+Todo use previous todo to allow for singular property (not in a list) by building according to type
+Todo add an optional property to the parameters of each buildable that controllers weather it builds lazily or not
+Todo add coverage for button that can have a few states

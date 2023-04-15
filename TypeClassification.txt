@@ -1,0 +1,7 @@
+T_[Name]: not classified
+TC_[Name]: constructive
+TI_[Name]: interface
+TF_[Name]: format
+TD_[Name]: dictionary
+TCF_[Name]: constructed format
+TE_[Name]: excepted
