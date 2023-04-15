@@ -1,4 +1,4 @@
-import { TC_OneObjectList } from "../../../types";
+import { TC_OneObjectList } from "../../types";
 import { TC_InstantiableParams } from "../types";
 import C_Button, { TF_ButtonAllMembers } from "./Button";
 import C_Field, { TF_FieldAllMembers } from "./Field";

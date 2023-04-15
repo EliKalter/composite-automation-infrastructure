@@ -1,5 +1,3 @@
-import { WebElementPromise } from "selenium-webdriver";
-import { TC_AtLeastOne } from "../../../types";
 import C_Button from "../Simples/Button";
 import C_Field from "../Simples/Field";
 import {
@@ -61,12 +59,12 @@ export default class C_SimpleCollection<
     }
 }
 
-export type TF_SimpleCollection = TC_AtLeastOne<{
+export type TF_SimpleCollection = {
     [Class in keyof TD_ControllerNames]?: Record<
         string,
         TD_ControllerNames[Class]
     >;
-}>;
+};
 
 export type TC_AggregatedSimpleCollection<
     T extends TF_SimpleCollection,
