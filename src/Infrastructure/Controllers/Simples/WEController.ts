@@ -8,6 +8,8 @@ export default class C_WEController {
     private _elementGenerator: () => WebElementPromise;
 
     public constructor(param: TC_ControllerParams<C_WEController>) {
+        this._element = null;
+
         this._elementGenerator = () => param.element(param.driver);
     }
 

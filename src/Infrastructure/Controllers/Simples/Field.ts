@@ -6,7 +6,7 @@ export default class C_Field
     extends C_WEController
     implements TI_Parented<TF_FieldAllMembers, TF_WEController>
 {
-    private _somethingThatIsNotInButton;
+    private _somethingThatIsNotInButton: any;
     public constructor(param: TC_ControllerParams<C_Field>) {
         super(param);
     }
