@@ -65,9 +65,11 @@ export default class C_ComplexCollection<
         Class: TC_ComplexConstructor<Form>,
         params: TC_ComplexParameters<TE_Collection>[Type],
     ): TE_Collection[Type] {
+        type InstantiableClass = TC_ComplexConstructor<Form>;
+        type ParamsKeys = keyof TC_ComplexParameters<TE_Collection>[Type];
         const keys: object = {};
         for (const key of Object.keys(params)) {
-            keys[key] = new Class(params[key]);
+            (keys as Record<ParamsKeys, InstantiableClass>)[key as ParamsKeys] = new Class(params[key]);
         }
         return keys as TE_Collection[Type];
     }
