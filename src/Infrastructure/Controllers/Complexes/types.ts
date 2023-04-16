@@ -8,10 +8,6 @@ import C_ComplexController, {
     TC_ParameterizedComplexController,
     TF_ComplexControllerAllMembers,
 } from "./ComplexController";
-import C_SimpleCollection, {
-    TC_ParameterizedSimpleCollection,
-    TF_SimpleCollection,
-} from "./SimpleCollection";
 
 export type T_ComplexesForms =
     | TF_ComplexControllerAllMembers

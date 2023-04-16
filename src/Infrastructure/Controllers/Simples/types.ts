@@ -1,16 +1,16 @@
 import { TC_OneObjectList } from "../../types";
 import { TC_InstantiableParams } from "../types";
-import C_Button, { TF_ButtonAllMembers } from "./Button";
-import C_Field, { TF_FieldAllMembers } from "./Field";
+import C_Button, { TI_ButtonParams } from "./Button";
+import C_Field, { TI_FieldParams } from "./Field";
 import C_WEController, { TI_WEControllerParams } from "./WEController";
 
 export type T_Controllers = C_Button | C_Field | C_WEController;
 
 export type TD_ControllerParameters<T extends T_Controllers> =
     T extends C_Button
-        ? TF_ButtonAllMembers
+        ? TI_ButtonParams
         : T extends C_Field
-        ? TF_FieldAllMembers
+        ? TI_FieldParams
         : T extends C_WEController
         ? TI_WEControllerParams
         : never;

@@ -32,17 +32,13 @@ export default class C_SimpleCollection<
     }
 
     public get buttons(): TE_Collection["buttons"] {
-        if (this._genButtons) {
-            if (!this._buttons) this._buttons = this._genButtons();
-            return this._buttons;
-        }
+        if (!this._buttons) this._buttons = this._genButtons();
+        return this._buttons;
     }
 
     public get fields(): TE_Collection["fields"] {
-        if (this._genFields) {
-            if (!this._fields) this._fields = this._genFields();
-            return this._fields;
-        }
+        if (!this._fields) this._fields = this._genFields();
+        return this._fields;
     }
 
     public buildController<
