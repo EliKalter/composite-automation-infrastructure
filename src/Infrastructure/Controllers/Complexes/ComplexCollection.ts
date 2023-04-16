@@ -69,7 +69,8 @@ export default class C_ComplexCollection<
         type ParamsKeys = keyof TC_ComplexParameters<TE_Collection>[Type];
         const keys: object = {};
         for (const key of Object.keys(params)) {
-            (keys as Record<ParamsKeys, InstantiableClass>)[key as ParamsKeys] = new Class(params[key]);
+            // Todo check carefully if this as as as can be removed sense it removes a lot of the type safety
+            (keys as Record<ParamsKeys, InstantiableClass>)[key as ParamsKeys] = new Class(params[key as keyof ParamsKeys] as unknown as TC_ComplexParameters<Form>);
         }
         return keys as TE_Collection[Type];
     }

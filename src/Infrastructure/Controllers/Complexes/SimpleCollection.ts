@@ -2,6 +2,7 @@ import C_Button from "../Simples/Button";
 import C_Field from "../Simples/Field";
 import {
     TC_ControllerNameToParameters,
+    TC_ControllerParams,
     TC_ControllersConstructor,
     TD_ControllerNames,
     T_Controllers,
@@ -48,14 +49,15 @@ export default class C_SimpleCollection<
         Type extends keyof TF_SimpleCollection,
         Controller extends T_Controllers,
     >(
-        c: TC_ControllersConstructor<Controller>,
+        Class: TC_ControllersConstructor<Controller>,
         params: TC_ParameterizedSimpleCollection<TE_Collection>[Type],
     ): TE_Collection[Type] {
         type InstantiableClass = TC_ControllersConstructor<Controller>;
         type ParamsKeys = keyof TC_ParameterizedSimpleCollection<TE_Collection>[Type];
         const keys: object = {};
         for (const key of Object.keys(params)) {
-            (keys as Record<ParamsKeys, InstantiableClass>)[key as ParamsKeys] = new c(params[key]);
+            // Todo check carefully if this as as as can be removed sense it removes a lot of the type safety
+            (keys as Record<ParamsKeys, InstantiableClass>)[key as ParamsKeys] = new Class(params[key as ParamsKeys] as TC_ControllerParams<Controller>);
         }
         return keys as TE_Collection[Type];
     }
