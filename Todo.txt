@@ -9,3 +9,5 @@ Todo add a type property to all controllers and collections parameters so that t
 Todo use previous todo to allow for singular property (not in a list) by building according to type
 Todo add an optional property to the parameters of each buildable that controllers weather it builds lazily or not
 Todo add coverage for button that can have a few states
+Todo make types singular
+Todo give better names to generic arguments
