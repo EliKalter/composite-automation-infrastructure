@@ -43,7 +43,6 @@ export default class C_ComplexCollection<
                 C_ComplexController<TF_ComplexControllerAllMembers>,
                 params.complexControllers,
             );
-
     }
 
     public get complexCollections(): TE_Collection["complexCollections"] {
@@ -70,7 +69,12 @@ export default class C_ComplexCollection<
         const keys: object = {};
         for (const key of Object.keys(params)) {
             // Todo check carefully if this as as as can be removed sense it removes a lot of the type safety
-            (keys as Record<ParamsKeys, InstantiableClass>)[key as ParamsKeys] = new Class(params[key as keyof ParamsKeys] as unknown as TC_ComplexParameters<Form>);
+            (keys as Record<ParamsKeys, InstantiableClass>)[key as ParamsKeys] =
+                new Class(
+                    params[
+                        key as keyof ParamsKeys
+                    ] as unknown as TC_ComplexParameters<Form>,
+                );
         }
         return keys as TE_Collection[Type];
     }

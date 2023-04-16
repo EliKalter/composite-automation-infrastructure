@@ -53,11 +53,17 @@ export default class C_SimpleCollection<
         params: TC_ParameterizedSimpleCollection<TE_Collection>[Type],
     ): TE_Collection[Type] {
         type InstantiableClass = TC_ControllersConstructor<Controller>;
-        type ParamsKeys = keyof TC_ParameterizedSimpleCollection<TE_Collection>[Type];
+        type ParamsKeys =
+            keyof TC_ParameterizedSimpleCollection<TE_Collection>[Type];
         const keys: object = {};
         for (const key of Object.keys(params)) {
             // Todo check carefully if this as as as can be removed sense it removes a lot of the type safety
-            (keys as Record<ParamsKeys, InstantiableClass>)[key as ParamsKeys] = new Class(params[key as ParamsKeys] as TC_ControllerParams<Controller>);
+            (keys as Record<ParamsKeys, InstantiableClass>)[key as ParamsKeys] =
+                new Class(
+                    params[
+                        key as ParamsKeys
+                    ] as TC_ControllerParams<Controller>,
+                );
         }
         return keys as TE_Collection[Type];
     }
